@@ -42,6 +42,14 @@ class App extends Component {
     } 
     else if (this.state.weight === "") {
       alert("Please Enter Weight");
+    } 
+    else if (isNaN(this.state.height)) {
+      alert("Please Enter Valid Height");
+      this.setState({ height: "" })
+    } 
+    else if (isNaN(this.state.weight)) {
+      alert("Please Enter Valid Weight");
+      this.setState({ weight: "" })
     }
     else {
       let bmi = Number(this.state.weight / (this.state.height / 100 ) ** 2).toFixed(2);
